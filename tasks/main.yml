@@ -1,0 +1,15 @@
+---
+  - name: Install postfix
+    apt: pkg={{ item }}
+    with_items:
+      - 'postfix'
+    tags:
+      - postfix
+
+  - name: Start Postfix on server boot
+    service: >
+      name=postfix
+      state=started
+      enabled=yes
+    tags:
+      - postfix
