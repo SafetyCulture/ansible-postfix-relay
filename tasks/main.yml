@@ -13,3 +13,12 @@
       enabled=yes
     tags:
       - postfix
+
+  - name: Template postfix configuration
+    template: >
+      src=main.cf.j2
+      dest=/etc/postfix/main.cf
+    tags:
+      - postfix
+    notify:
+      - restart_postfix
