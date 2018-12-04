@@ -6,14 +6,6 @@
     tags:
       - postfix
 
-  - name: Start Postfix on server boot
-    service: >
-      name=postfix
-      state=started
-      enabled=yes
-    tags:
-      - postfix
-
   - name: Template postfix configuration
     template: >
       src=main.cf.j2
